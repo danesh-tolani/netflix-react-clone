@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://api.themoviedb.org/3",
+  baseURL: "https://api.themoviedb.org/3",
 });
 
 // this baseURL will be same for all the urls, only the last part will change
