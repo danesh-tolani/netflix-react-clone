@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import YouTube from "react-youtube";
 import axios from "../axios";
 import "./Row.css";
 
@@ -19,6 +20,8 @@ function Row({ title, fetchURL, isLargeRow }) {
     fetchData();
   }, [fetchURL]); // when ever there is an external variable used inside useEffect (fetchURL in the below example), we need to put that in the dependency array
 
+  const opts = {};
+
   // console.table(movies);
   return (
     <div className="row">
@@ -29,6 +32,7 @@ function Row({ title, fetchURL, isLargeRow }) {
           return <img key={movie.id} className={`row_poster ${isLargeRow && "row_posterLarger"}`} src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />;
         })}
       </div>
+      {/* <YouTube videoId={trailerURL} opts={opts} /> */}
     </div>
   );
 }
